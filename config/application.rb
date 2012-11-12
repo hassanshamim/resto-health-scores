@@ -66,7 +66,7 @@ module RestoHealthScores
     config.assets.version = '1.0'
 
     # Automatically creates a fabricator when a new model is generated
-    config.generator do |g|
+    config.generators do |g|
       g.test_framework      :rspec, fixture: true
       g.fixture_replacement :fabrication
     end
