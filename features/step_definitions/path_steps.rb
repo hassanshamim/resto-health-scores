@@ -1,6 +1,6 @@
 def path_to( page_name )
   case page_name
-  when /^the home\s?pages$/
+  when /^the home\s?page$/
     '/'
   when "that restaurant's page"
     resto_path(@resto)
