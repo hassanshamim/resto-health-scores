@@ -2,10 +2,10 @@
 <table id="health_scores">
   <thead>
     <tr>
-      <th>Name</th>
+      <th><%= link_to "Name", audit_index_path(:sort => 'name')  %></th>
       <th>Address</th>
-      <th>Score</th>
-      <th>Date Reviewed</th>
+      <th><%= link_to "Score", audit_index_path( :sort => 'score') %></th>
+      <th><%= link_to "Date", audit_index_path( :sort => 'date') %></th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +14,7 @@
       <td> <%=audit.name %> </td>
       <td> <%=audit.address %> </td>
       <td> <%=audit.score %> </td>
-      <td> <%=audit.date %> </td>
+      <td> <%=audit.date.to_formatted_s(:display) %> </td>
     </tr>
   <% end %>
   </tbody>

@@ -6,7 +6,7 @@ def path_to( page_name )
     resto_path(@resto)
   when "the list page"
     '/scores'
-  when /^the ordered by "(.+)" page$/
+  when /^the sorted by "(.+)" page$/
     scores_path($1)
   else
     raise "Can't find mapping from \"#{page_name}\" to a path. \n" +
@@ -15,7 +15,7 @@ def path_to( page_name )
 end
 
 def scores_path( order )
-  "/scores?order=#{order.downcase}"
+  "/scores?sort=#{order.downcase}"
 end
 
 Given /^I am on (.+)$/ do |page_name|

@@ -1,6 +1,8 @@
 class AuditController < ApplicationController
   def index
-    @audits = Audit.all
+    sort_order = {'name' => 'name ASC', 'score' => 'score DESC', 'date' => 'date DESC' }
+    sort = sort_order[ params.fetch(:sort){'name'} ]
+    @audits = Audit.all :order => sort
   end
 
   def show
