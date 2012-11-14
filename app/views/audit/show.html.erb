@@ -1,2 +1,3 @@
-<h1>Audit#show</h1>
-<p>Find me in app/views/audit/show.html.erb</p>
+<h1>Health Safety Score of <%=@audit.name.upcase %></h1>
+
+<%= render :partial =>"audit", :object => @audit %>

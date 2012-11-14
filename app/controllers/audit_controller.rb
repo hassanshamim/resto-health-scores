@@ -4,6 +4,9 @@ class AuditController < ApplicationController
   end
 
   def show
-    @audit = Audit.find(parems[:id])
+    @audit = Audit.find(params[:id])
+  end
+
+  def select
   end
 end

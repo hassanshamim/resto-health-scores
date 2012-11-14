@@ -1,7 +1,7 @@
 RestoHealthScores::Application.routes.draw do
-  root :to => 'audit#index'
+  root :to => 'audit#select'
 
-  get "audit/show"
+  resources :audit, :only => [:show, :index], :path => :scores
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

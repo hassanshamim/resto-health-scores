@@ -1,0 +1,21 @@
+
+<table id="health_scores">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Score</th>
+      <th>Date Reviewed</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% audits.each do |audit| %>
+    <tr>
+      <td> <%=audit.name %> </td>
+      <td> <%=audit.address %> </td>
+      <td> <%=audit.score %> </td>
+      <td> <%=audit.date %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
