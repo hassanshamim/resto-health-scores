@@ -2,10 +2,10 @@
 <table id="health_scores">
   <thead>
     <tr>
-      <th><%= link_to "Name", audit_index_path(:sort => 'name')  %></th>
+      <th><%= sortable( "name" ) %></th>
       <th>Address</th>
-      <th><%= link_to "Score", audit_index_path( :sort => 'score') %></th>
-      <th><%= link_to "Date", audit_index_path( :sort => 'date') %></th>
+      <th><%= sortable("score" ) %></th>
+      <th><%= sortable( "date" )%></th>
     </tr>
   </thead>
   <tbody>

@@ -1,8 +1,7 @@
 class AuditController < ApplicationController
+  helper_method :sort_column, :sort_order
   def index
-    sort_order = {'name' => 'name ASC', 'score' => 'score DESC', 'date' => 'date DESC' }
-    sort = sort_order[ params.fetch(:sort){'name'} ]
-    @audits = Audit.all :order => sort
+    @audits = Audit.order( sort_column + ' ' + sort_order )
   end
 
   def show
@@ -10,5 +9,15 @@ class AuditController < ApplicationController
   end
 
   def select
+  end
+
+  private
+
+  def sort_column
+    %w{name score date}.include?( params[:sort] ) ? params[:sort] : 'name'
+  end
+
+  def sort_order
+    %w{asc, desc}.include?( params[:order] ) ? params[:order] : 'asc'
   end
 end
