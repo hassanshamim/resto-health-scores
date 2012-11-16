@@ -1,3 +1,13 @@
 // Place all the styles related to the Audit controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table#health_scores {
+  width:720px;
+  margin-top:10px;
+}
+
+th#name { width: 304px; }
+th#score { width: 59px; }
+th#address { width: 253px; }
+th#date { width: 92px; }
