@@ -1,7 +1,9 @@
 class AuditController < ApplicationController
   helper_method :sort_column, :sort_order
   def index
-    @audits = Audit.order( sort_column + ' ' + sort_order ).page(params[:page]).per(30)
+    @audits = Audit.joins(:restaurant)
+                   .order( sort_column + ' ' + sort_order )
+                   .page(params[:page]).per(30)
   end
 
   def show

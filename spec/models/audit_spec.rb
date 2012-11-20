@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Audit do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validations" do
+    it { should_validate_presence_of :score }
+    it { should_validate_presence_of :date }
+  end
+  describe "associations" do
+    it { should_belong_to :restaurant }
+  end
 end

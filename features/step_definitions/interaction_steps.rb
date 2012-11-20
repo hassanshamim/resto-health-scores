@@ -27,3 +27,12 @@ Then /^I should see "(.*?)" in the "(.*?)" field$/ do |text, field_name|
   field_value = (field.tag_name == 'textarea') ? field.text : field.value
   field_value.should == text
 end
+
+Given /I (?:click|press) the table header "(.*?)"$/ do |link_text|
+  page = page.html.pry
+  page.pry
+  binding.pry
+  within( :css, "table#health_scores thead tr th##{link_text.downcase}") do
+    click_link_or_button link_text
+  end
+end
