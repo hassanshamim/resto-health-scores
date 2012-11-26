@@ -48,6 +48,7 @@ Then /^I should see the following (.*) in the database:$/ do |model_name, table|
   klass = Fabrication::Cucumber::StepFabricator.new(model_name).klass
   klass.where(table.rows_hash.symbolize_keys).count.should == 1
 end
+
 Given /^an audit with name: "(\w*)", address: "(.*)", score: (\d*), date: (.*)$/ do | name, address, score, date |
   Fabricate( :audit, score: score, date: date ) do
     restaurant { Fabricate( :restaurant, name: name, address: address ) }

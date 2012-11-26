@@ -1,3 +1,4 @@
+require 'pry'
 Given /^I (?:click|press) "(.*?)"$/ do |link_text|
   click_link_or_button link_text
 end
@@ -29,9 +30,6 @@ Then /^I should see "(.*?)" in the "(.*?)" field$/ do |text, field_name|
 end
 
 Given /I (?:click|press) the table header "(.*?)"$/ do |link_text|
-  page = page.html.pry
-  page.pry
-  binding.pry
   within( :css, "table#health_scores thead tr th##{link_text.downcase}") do
     click_link_or_button link_text
   end

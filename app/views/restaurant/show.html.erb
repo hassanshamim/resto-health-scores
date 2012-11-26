@@ -1,0 +1,11 @@
+<div class="row">
+  <div class= "six columns push-three">
+    <h2> <%= @restaurant.name %></h2>
+    <h3> <small> located at <%= @restaurant.address %> </small> </h3>
+      <p> Google map here </p>
+  </div>
+  <div class= "three columns ">
+    <h5>Recent audits</h5>
+    <%= render :partial=>"audits_table", :locals =>{:audits => @restaurant.audits } %>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<table id="audits">
+  <thead>
+    <tr>
+      <th id="score"> Score </th>
+      <th id="date">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% audits.each do |audit| %>
+    <tr>
+      <td> <%= audit.score %> </td>
+      <td> <%= audit.date.to_formatted_s(:display) %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

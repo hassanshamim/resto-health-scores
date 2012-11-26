@@ -16,10 +16,12 @@ def create_audits(nodes)
     address = children[2]
     date = Date.strptime(children[4][/\d+\/\d+\/\d+/], '%m/%d/%Y')
     score = children[6][/\d+$/]
-    Audit.create(name: name, address: address, date: date, score: score)
+    resto = Restaurant.where( name: name, address: address ).first_or_create!
+    Audit.create( date: date, score: score, restaurant: resto )
   end
 end
 
+#for debugging
 def display_audits (nodes)
   nodes.each do |node|
     children = node.children.map{ |s| s.text.strip }
@@ -30,6 +32,3 @@ def display_audits (nodes)
   end
   nil
 end
-
-
-Date.strptime('29/5/2008', '%d/%m/%Y')

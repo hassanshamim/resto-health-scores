@@ -11,7 +11,7 @@
   <tbody>
   <% audits.each do |audit| %>
     <tr>
-      <td> <%=audit.restaurant.name %> </td>
+      <td> <%= link_to audit.restaurant.name, audit.restaurant %> </td>
       <td> <%=audit.restaurant.address %> </td>
       <td> <%=audit.score %> </td>
       <td> <%=audit.date.to_formatted_s(:display) %> </td>

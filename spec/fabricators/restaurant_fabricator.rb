@@ -1,4 +1,4 @@
 Fabricator(:restaurant) do
-  name    "Example Resto"
-  address "1234 Fake Street"
+  name { sequence( :name ) { |i| "Resto#{i}"}}
+  address { sequence( :address ){ |i| "#{i} Sequence Road" }}
 end

@@ -1,0 +1,17 @@
+
+<table id="restaurants">
+  <thead>
+    <tr>
+      <th id="name"> Name </th>
+      <th id="address">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @restaurants.each do |resto| %>
+    <tr>
+      <td> <%= link_to resto.name, resto %> </td>
+      <td> <%= resto.address %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

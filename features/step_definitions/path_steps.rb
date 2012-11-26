@@ -3,14 +3,16 @@ def path_to( page_name )
   when /^the home\s?page$/
     '/'
   when "that restaurant's page"
-    resto_path(@resto)
-  when "the list page"
+    restaurant_path(@resto)
+  when "the audits list page"
     '/scores'
+  when "the restaurants list page"
+    '/restaurant'
   when /^the sorted by "(.+)" page$/
     scores_path($1)
   else
     raise "Can't find mapping from \"#{page_name}\" to a path. \n" +
-      "Now, go and add a mapping in #{__FILE__}"
+    "Now, go and add a mapping in #{__FILE__}"
   end
 end
 
