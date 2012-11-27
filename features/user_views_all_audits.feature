@@ -1,7 +1,7 @@
 Feature: User sees the full audits list
-  In order to peruse the restaurant scores
+  In order to peruse the audit scores
   As a user
-  I want to see all restaurants scores
+  I want to see all audits
   # DATES are formatted as YYYY/MM/DD
   # BUT DISPLAYED AS MM/DD/YYYY
 
@@ -17,7 +17,6 @@ Feature: User sees the full audits list
       | Resto1 | 123 Fake Street |  88   | 09/05/1989 |
       | Resto2 | 324 Dumb Avenue |  100  | 02/15/2011 |
 
-  @wip
   Scenario: User follows link to restaurant information
     Given I am on the audits list page
     Then I should see health scores table

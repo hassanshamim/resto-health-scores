@@ -4,6 +4,7 @@
     <tr>
       <th id="name"> Name </th>
       <th id="address">Address</th>
+      <th id="last_inspection" > Last Inspection </th>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +12,7 @@
     <tr>
       <td> <%= link_to resto.name, resto %> </td>
       <td> <%= resto.address %> </td>
+      <td> <%= latest_audit_date( resto ) %> </td>
     </tr>
   <% end %>
   </tbody>

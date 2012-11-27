@@ -6,6 +6,6 @@
   </div>
   <div class= "three columns ">
     <h5>Recent audits</h5>
-    <%= render :partial=>"audits_table", :locals =>{:audits => @restaurant.audits } %>
+    <%= render :partial=>"audits_table", :locals =>{:audits => audits_by_date( @restaurant ) } %>
   </div>
 </div>
