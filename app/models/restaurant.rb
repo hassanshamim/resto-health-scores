@@ -8,4 +8,9 @@ class Restaurant < ActiveRecord::Base
     resto.name = resto.name.titleize
     resto.address = resto.address.titleize
   end
+
+  def failing_audits
+    audits = self.audits
+    audits.select{|audit| audit.score < 75 } #I don't know what the actual cutoff is
+  end
 end

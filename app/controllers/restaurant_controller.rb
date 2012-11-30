@@ -17,4 +17,5 @@ class RestaurantController < ApplicationController
     latest = audits_by_date( resto ).first
     latest.date.to_formatted_s( :display )
   end
+
 end

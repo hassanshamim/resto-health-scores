@@ -3,6 +3,7 @@ RestoHealthScores::Application.routes.draw do
 
   root :to => 'audit#select'
 
+  match 'scores/latest' => 'audit#latest'
   resources :audit, :only => [:show, :index], :path => :scores
   resources :restaurant, :only => [:show, :index]
 

@@ -13,6 +13,11 @@ class AuditController < ApplicationController
   def select
   end
 
+  def latest
+    latest = Audit.order("Created_at DESC").first.created_at.to_date
+    @audits = Audit.all.select{|audit| audit.created_at.to_date == latest }
+  end
+
   private
 
   def sort_column

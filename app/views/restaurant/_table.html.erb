@@ -5,6 +5,7 @@
       <th id="name"> Name </th>
       <th id="address">Address</th>
       <th id="last_inspection" > Last Inspection </th>
+      <th id="failing_audits" > Failing Inspections </th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,7 @@
       <td> <%= link_to resto.name, resto %> </td>
       <td> <%= resto.address %> </td>
       <td> <%= latest_audit_date( resto ) %> </td>
+      <td> <%= resto.failing_audits.count %></td>
     </tr>
   <% end %>
   </tbody>
