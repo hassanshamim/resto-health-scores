@@ -1,14 +1,12 @@
-require 'nokogiri'
-require 'open-uri'
-require 'net/http'
 require 'date'
+require 'nokogiri'
 task :scrape => :environment do
   puts "Scraping Data... this may take a few seconds... (Or minutes at NSS)"
   start_date = ( Date.today - 14 ).strftime('%m/%d/%Y')
   end_date = ( Date.today ).strftime('%m/%d/%Y')
 
-  $remote_url = "http://health.nashville.gov/env/food/FoodScores/FoodScores.aspx?BegDate=#{start_date}&EndDate=#{end_date}"
-  doc = Nokogiri::HTML(open($remote_url).read)
+  remote_url = "http://health.nashville.gov/env/food/FoodScores/FoodScores.aspx?BegDate=#{start_date}&EndDate=#{end_date}"
+  doc = Nokogiri::HTML(open(remote_url).read)
   nodes = doc.css('div#content > p')
   low_score_position = nodes.find_index{|node| node.inner_text.include?("Low Scores")}
   updates_position = nodes.find_index{|node| node.inner_text.include?("Updates")}
@@ -50,7 +48,11 @@ task :scrape => :environment do
     nil
   end
 
-  create_audits( passing_nodes )
-  create_audits( failing_nodes )
+  if passing_nodes.empty? and failing_nodes.empty?
+    puts "No scores to be added"
+  else
+    create_audits( passing_nodes )
+    create_audits( failing_nodes )
+  end
 
 end
