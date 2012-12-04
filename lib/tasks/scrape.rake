@@ -1,6 +1,6 @@
-require 'date'
 require 'nokogiri'
 task :scrape => :environment do
+  require 'open-uri'
   puts "Scraping Data... this may take a few seconds... (Or minutes at NSS)"
   start_date = ( Date.today - 14 ).strftime('%m/%d/%Y')
   end_date = ( Date.today ).strftime('%m/%d/%Y')
