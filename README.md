@@ -5,7 +5,6 @@ Rails app to view Nashville's restaurants' health food scores
 
 Features to be Added
 ------
-* Google charts of restaurant's scores over time
 * Google map of restaurant location
 * Search feature
   
