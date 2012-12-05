@@ -3,6 +3,8 @@ resto-health-scores
 
 Rails app to view Nashville's restaurants' health food scores
 
+Check it out on [Heroku!](http://health-scores.herokuapp.com/scores)
+
 Features to be Added
 ------
 * Google map of restaurant location
