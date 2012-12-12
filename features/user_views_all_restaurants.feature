@@ -22,7 +22,6 @@ Feature: User views full restaurant list
       | Resto1 | 123 Fake Street     | 11/21/2012 |
       | Resto2 | 324 Dumb Avenue | 02/15/2011 |
 
-  @wip
   Scenario: User follows link to restaurant page
     Given I am on the restaurants list page
     And I click "Resto1"

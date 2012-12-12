@@ -54,3 +54,13 @@ Given /^an audit with name: "(\w*)", address: "(.*)", score: (\d*), date: (.*)$/
     restaurant { Fabricate( :restaurant, name: name, address: address ) }
   end
 end
+
+Given /^There are (\d+) audits? from (\d+) weeks? ago$/ do |count, weeks|
+  count.to_i.times do
+    Fabricate( :audit, weeks_old: weeks.to_i )
+  end
+end
+
+Given /^There are (\d+) audits are added today$/ do |count|
+  count.to_i.times{ Fabricate( :audit, weeks_old: 0 ) }
+end

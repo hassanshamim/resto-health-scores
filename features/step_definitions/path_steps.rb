@@ -10,6 +10,8 @@ def path_to( page_name )
     '/restaurant'
   when /^the sorted by "(.+)" page$/
     scores_path($1)
+  when /^the latest audits page$/
+    '/scores/latest'
   else
     raise "Can't find mapping from \"#{page_name}\" to a path. \n" +
     "Now, go and add a mapping in #{__FILE__}"
@@ -33,3 +35,6 @@ Then /^I should be on (.+)$/ do |page_name|
   end
 end
 
+When /^I reload the page$/ do
+  visit [ current_path, page.driver.request.env['QUERY_STRING'] ].reject(&:blank?).join('?')
+end
